@@ -10,6 +10,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
+  <div class="falling-petals" aria-hidden="true"></div>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="彼岸の恋 トップ">彼岸の恋<span>HIGAN NO KOI</span></a>
     <nav aria-label="メインナビゲーション">
@@ -19,12 +20,17 @@
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="title">
-      <div class="hero-art"><img src="assets/shungiku.webp" alt="夜の遊郭に佇む春菊" fetchpriority="high"></div>
+      <div class="hero-art"><img src="assets/flyer.webp" alt="彼岸の恋 初稿フライヤー。満月の下、男女が並ぶ縦長のビジュアル" fetchpriority="high"></div>
       <div class="hero-copy">
         <p class="eyebrow">SPOON · 約束劇</p>
         <h1 id="title">彼岸の恋</h1>
         <p class="tagline">咲いて、散るまで。<br>あなたを想う。</p>
         <p class="hero-note">幕末の遊郭を舞台に紡ぐ、<br>切なく美しい恋の物語。</p>
+        <div class="bgm-control">
+          <button class="bgm-button" id="bgm-toggle" type="button" aria-pressed="false" disabled>BGMを再生</button>
+          <p id="bgm-status" class="control-status" role="status">BGM音源を設定すると再生できます。</p>
+          <audio id="bgm" loop preload="none"></audio>
+        </div>
         <a class="button" href="#event">公演情報を見る <span aria-hidden="true">↓</span></a>
       </div>
       <p class="vertical-note" aria-hidden="true">ひと夜の約束、その先へ</p>
@@ -87,7 +93,17 @@
       <div class="prose placeholder"><p>【主催者コメントをここに掲載してください】</p><p class="hint">※公開前に、主催者からのメッセージへ差し替えてください。</p></div>
     </section>
   </main>
+  <section class="counter-section" aria-labelledby="counter-title">
+    <h2 id="counter-title">訪れてくださった方</h2>
+    <div class="counter-values">
+      <p><span>ユニーク訪問者</span><strong id="visitor-count" aria-live="polite">読み込み中</strong></p>
+      <p><span>今日のアクセス（日本時間）</span><strong id="today-count" aria-live="polite">読み込み中</strong></p>
+    </div>
+    <p class="counter-credit">集計にはCounterAPIを利用しています。<a href="https://counterapi.com/" target="_blank" rel="noopener noreferrer">CounterAPI</a></p>
+  </section>
   <footer><a href="#top" class="footer-title">彼岸の恋</a><p>Spoon 約束劇</p><small>© 彼岸の恋 制作チーム</small></footer>
+  <script src="site.js" defer></script>
 </body>
 </html>
+
 
